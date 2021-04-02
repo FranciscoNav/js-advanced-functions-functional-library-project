@@ -8,8 +8,12 @@ const fi = (function() {
 
     },
 
-    map: function() {
-
+    map: function( arry, callBack) {
+      const newArry = []
+     Array.from(arry).forEach(el => {
+        newArry.push(callBack(el))
+      })
+      return newArry
     },
 
     reduce: function() {
@@ -25,3 +29,6 @@ const fi = (function() {
 })()
 
 fi.libraryMethod()
+
+
+//arry.map(x => x++)
